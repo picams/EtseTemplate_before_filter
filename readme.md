@@ -51,7 +51,7 @@ npm install react-native-vision-camera
 # i18n
 
 # App Center
-npm install appcenter-crashes appcenter-analytics
+npm install appcenter appcenter-analytics appcenter-crashes --save-exact
 
 # Code Push
 npm install react-native-code-push
@@ -61,6 +61,9 @@ npm install @react-native-community/netinfo
 npm install react-native-fs
 npm install react-native-fast-image
 npm install react-native-restart
+
+# ios after every npm install
+pod install --repo-update
 
 
 

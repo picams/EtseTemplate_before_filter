@@ -12,6 +12,7 @@ import RNFS from 'react-native-fs';
 import {database} from '../db/database';
 import {Photo} from '../db/models';
 import {useNavigation} from '@react-navigation/native';
+import Analytics from 'appcenter-analytics';
 
 const BUTTON_SIZE = 80;
 
@@ -35,6 +36,7 @@ const CameraScreen = () => {
   }, []);
 
   const takePicture = async () => {
+
     const photo = await camera.current?.takePhoto({
       skipMetadata: true,
       flash: 'off',
@@ -51,6 +53,7 @@ const CameraScreen = () => {
     })(photo!.path);
 
     goBack();
+    await Analytics.trackEvent('takePicture');
   };
 
   const onError = useCallback((error: CameraRuntimeError) => {
