@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Maps = () => (
+const Map = () => (
   <View style={styles.container}>
     <MapView
       style={styles.map}
@@ -27,4 +27,4 @@ const Maps = () => (
   </View>
 );
 
-export default Maps;
+export default Map;

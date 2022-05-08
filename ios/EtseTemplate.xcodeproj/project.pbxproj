@@ -14,6 +14,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		D81E2FB15428F900070B7CF7 /* libPods-EtseTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E149223DF77DA57D5E326C /* libPods-EtseTemplate.a */; };
+		E88358392827CFD90030F3A6 /* wmelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88358382827CFD90030F3A6 /* wmelon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EtseTemplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97E149223DF77DA57D5E326C /* libPods-EtseTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		E88358372827CFD80030F3A6 /* EtseTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EtseTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
+		E88358382827CFD90030F3A6 /* wmelon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wmelon.swift; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		EFE819B69963E7406E2CB4E8 /* Pods-EtseTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		F434A4EAC864D3BD2EA020E2 /* libPods-EtseTemplate-EtseTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate-EtseTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +95,8 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				E88358382827CFD90030F3A6 /* wmelon.swift */,
+				E88358372827CFD80030F3A6 /* EtseTemplate-Bridging-Header.h */,
 			);
 			name = EtseTemplate;
 			sourceTree = "<group>";
@@ -145,7 +150,6 @@
 				3294591433299CCE4398DC2D /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */,
 				CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,7 +212,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						LastSwiftMigration = 1120;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -413,6 +417,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				E88358392827CFD90030F3A6 /* wmelon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +436,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3294591433299CCE4398DC2D /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -458,6 +464,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
 				INFOPLIST_FILE = EtseTemplateTests/Info.plist;
@@ -498,6 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EtseTemplate;
+				SWIFT_OBJC_BRIDGING_HEADER = "EtseTemplate-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -523,6 +531,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = EtseTemplate;
+				SWIFT_OBJC_BRIDGING_HEADER = "EtseTemplate-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};

@@ -1,29 +1,23 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Text} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {NavigationContainer} from '@react-navigation/native';
-import Maps from './screens/Maps';
-
-const Home = () => <Text>Home</Text>;
-const Notifications = () => <Text>Notifications</Text>;
-const Profile = () => <Text>Profile</Text>;
-const Settings = () => <Text>Settings</Text>;
+import DatabaseProvider from '@nozbe/watermelondb/DatabaseProvider';
+import {database} from './db/database';
+import Map from './screens/Map';
+import Camera from './screens/Camera';
+import Gallery from './screens/Gallery';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Maps"
-        component={Maps}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen name="Home" component={Home} />
-      <Stack.Screen name="Notifications" component={Notifications} />
-      <Stack.Screen name="Profile" component={Profile} />
-      <Stack.Screen name="Settings" component={Settings} />
+    <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Screen name="HomeScreen" component={Home} />
+      <Stack.Screen name="MapScreen" component={Map} />
+      <Stack.Screen name="CameraScreen" component={Camera} />
+      <Stack.Screen name="GalleryScreen" component={Gallery} />
     </Stack.Navigator>
   );
 };
@@ -33,7 +27,7 @@ const DrawerNavigator = () => {
   return (
     <Drawer.Navigator>
       <Drawer.Screen
-        name="Drawer"
+        name="Home"
         component={StackNavigator}
         options={{
           title: 'Home',
@@ -47,10 +41,24 @@ const DrawerNavigator = () => {
         }}
       />
       <Drawer.Screen
-        name="Drawer2"
-        component={StackNavigator}
+        name="Map"
+        component={Map}
         options={{
-          title: 'Home2',
+          title: 'Map',
+          drawerIcon: ({focused, size}) => (
+            <Ionicons
+              name="md-home"
+              size={size}
+              color={focused ? '#7cc' : '#ccc'}
+            />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Gallery"
+        component={Gallery}
+        options={{
+          title: 'Gallery',
           drawerIcon: ({focused, size}) => (
             <Ionicons
               name="md-home"
@@ -66,9 +74,11 @@ const DrawerNavigator = () => {
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
+    <DatabaseProvider database={database}>
+      <NavigationContainer>
+        <DrawerNavigator />
+      </NavigationContainer>
+    </DatabaseProvider>
   );
 };
 

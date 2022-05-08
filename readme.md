@@ -1,11 +1,17 @@
-# Template download 
+# Template 
 npx react-native init EtseTemplate --template react-native-template-typescript@6.9
+
+# eslint / prettier
 
 # hermes enabled
 android
     enableHermes: false -> true
 ios 
     hermes_enabled => false -> true
+
+# Exception Handler
+npm i react-native-exception-handler
+    https://github.com/a7ul/react-native-exception-handler#usage
 
 # Navigation
 npm install @react-navigation/native @react-navigation/native-stack @react-navigation/drawer @react-navigation/bottom-tabs
@@ -29,15 +35,33 @@ npm install --save-dev @types/react-native-vector-icons
 npm install react-native-maps
     https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md
 
+# Offline database
+npm install @nozbe/watermelondb
+npm install --save-dev @babel/plugin-proposal-decorators
+    https://nozbe.github.io/WatermelonDB/Installation.html
+
 # Permissions
 npm install react-native-permissions
     https://github.com/zoontek/react-native-permissions#setup
 
-# Offline database
+# Camera
+npm install react-native-vision-camera
+    https://mrousavy.com/react-native-vision-camera/docs/guides
 
 # i18n
 
 # App Center
+npm install appcenter-crashes appcenter-analytics
 
-# Styling
+# Code Push
+npm install react-native-code-push
+
+# General
+npm install @react-native-community/netinfo
+npm install react-native-fs
+npm install react-native-fast-image
+npm install react-native-restart
+
+
+
 
