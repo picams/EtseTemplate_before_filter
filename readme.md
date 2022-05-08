@@ -16,6 +16,8 @@ npm install react-native-screens react-native-safe-area-context react-native-ges
     https://docs.swmansion.com/react-native-gesture-handler/docs/installation
     https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/
 
+    react-native-reanimated might require metro started with --reset-cache
+
 # Vector Icons
 npm install react-native-vector-icons
 npm install --save-dev @types/react-native-vector-icons
@@ -23,9 +25,13 @@ npm install --save-dev @types/react-native-vector-icons
 
     https://oblador.github.io/react-native-vector-icons/
 
-# Permissions
-
 # Maps
+npm install react-native-maps
+    https://github.com/react-native-maps/react-native-maps/blob/master/docs/installation.md
+
+# Permissions
+npm install react-native-permissions
+    https://github.com/zoontek/react-native-permissions#setup
 
 # Offline database
 
