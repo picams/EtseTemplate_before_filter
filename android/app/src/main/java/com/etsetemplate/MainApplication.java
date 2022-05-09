@@ -19,6 +19,7 @@ import com.facebook.react.bridge.JavaScriptContextHolder;
 import com.nozbe.watermelondb.jsi.WatermelonDBJSIPackage;
 
 import com.swmansion.reanimated.ReanimatedJSIModulePackage; // <- add
+import com.microsoft.codepush.react.CodePush;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -59,6 +60,11 @@ public class MainApplication extends Application implements ReactApplication {
               return modules;
             }
           };
+        }
+
+        @Override
+        protected String getJSBundleFile() {
+            return CodePush.getJSBundleFile();
         }
       };
 

@@ -103,16 +103,4 @@ const styles = StyleSheet.create({
     marginLeft: -MARGIN,
     marginRight: -MARGIN,
   },
-  actionHeader: {
-    color: 'rgba(0,100,255,1)',
-    fontSize: 16,
-  },
-  headerRightContainerStyle: {
-    flex: 1,
-    flexDirection: 'row',
-  },
-  headerRight: {
-    flex: 1,
-    flexDirection: 'row',
-  },
 });

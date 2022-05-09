@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {NavigationContainer} from '@react-navigation/native';
+import CodePushVerification from './appcenter/CodePush';
 import DatabaseProvider from '@nozbe/watermelondb/DatabaseProvider';
 import {database} from './db/database';
 import Map from './screens/Map';
@@ -74,11 +75,14 @@ const DrawerNavigator = () => {
 
 const App = () => {
   return (
-    <DatabaseProvider database={database}>
-      <NavigationContainer>
-        <DrawerNavigator />
-      </NavigationContainer>
-    </DatabaseProvider>
+    <>
+      <CodePushVerification />
+      <DatabaseProvider database={database}>
+        <NavigationContainer>
+          <DrawerNavigator />
+        </NavigationContainer>
+      </DatabaseProvider>
+    </>
   );
 };
 

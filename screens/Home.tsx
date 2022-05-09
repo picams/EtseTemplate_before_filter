@@ -1,12 +1,15 @@
-import React from 'react';
-import {StyleSheet, ScrollView, Text} from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, ScrollView, Text, Alert} from 'react-native';
 import {resetDatabase} from '../db/database';
 import RNRestart from 'react-native-restart';
 import Button from '../components/button';
 import {useNetInfo} from '@react-native-community/netinfo';
 import {useNavigation} from '@react-navigation/native';
+import codePush from 'react-native-code-push';
+import Crashes from 'appcenter-crashes';
 
 const AccountScreen = () => {
+  const [updateTitle, setUpdateTitle] = useState('Check for updates');
   const {navigate} = useNavigation();
   const {isConnected} = useNetInfo();
 
@@ -17,6 +20,44 @@ const AccountScreen = () => {
 
   const throwJSExceptionHandler = () => {
     throw new Error('This is a JavaScript exception');
+  };
+
+  const generateCrashHandler = async () => {
+    await Crashes.generateTestCrash();
+  };
+
+  const onButtonPress = () => {
+    try {
+      codePush.sync(
+        {
+          updateDialog: {
+            title: 'Update available',
+          },
+          installMode: codePush.InstallMode.IMMEDIATE,
+        }, // options
+        status => {
+          console.log('codePush.SyncStatus', status);
+
+          if (status === codePush.SyncStatus.UP_TO_DATE) {
+            Alert.alert('No update available');
+          }
+
+          if (status === codePush.SyncStatus.UPDATE_INSTALLED) {
+            Alert.alert('Update installed');
+            setUpdateTitle('Check for updates');
+          }
+        }, // syncStatusChangedCallback
+        ({receivedBytes, totalBytes}) => {
+          const percent = `${Math.ceil(receivedBytes / totalBytes) * 100}`;
+          setUpdateTitle(`Downloading update ${percent}%`);
+        }, // downloadProgressCallback
+        () => console.warn('Outdated app.'), // HandleBinaryVersionMismatchCallback
+      );
+    } catch (error) {
+      // crashlytics.recordError(error);
+      // Alert.alert('Error', JSON.stringify(error));
+      console.log(error);
+    }
   };
 
   return (
@@ -34,10 +75,20 @@ const AccountScreen = () => {
         title="Throw!"
         onPress={throwJSExceptionHandler}
       />
+      {/* <Button
+        style={styles.actionButton}
+        title="Crash!"
+        onPress={generateCrashHandler}
+      /> */}
       <Button
         style={styles.actionButton}
         title="Reset Local Data"
         onPress={resetDatabaseHandler}
+      />
+      <Button
+        style={styles.actionButton}
+        title={updateTitle}
+        onPress={onButtonPress}
       />
     </ScrollView>
   );

@@ -11,7 +11,9 @@
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint--fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "prettier": "prettier --check .",
-    "prettier--write": "prettier --write ."
+    "prettier--write": "prettier --write .",
+    "codepush": "appcenter codepush release-react -a edwin-etse.co.za/EtseTemplate -d Staging"
+
   },
   "dependencies": {
     "@nozbe/watermelondb": "^0.24.0",
@@ -25,6 +27,7 @@
     "appcenter-crashes": "4.4.4",
     "react": "17.0.2",
     "react-native": "0.67.4",
+    "react-native-code-push": "^7.0.4",
     "react-native-exception-handler": "^2.10.10",
     "react-native-fast-image": "^8.5.11",
     "react-native-fs": "^2.20.0",

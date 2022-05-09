@@ -1,7 +1,9 @@
 # Template 
 npx react-native init EtseTemplate --template react-native-template-typescript@6.9
+    https://reactnative.dev/docs/environment-setup
 
 # eslint / prettier
+https://dev-yakuza.posstree.com/en/react-native/eslint-prettier-husky-lint-staged/#prepare-react-native-project
 
 # hermes enabled
 android
@@ -52,9 +54,11 @@ npm install react-native-vision-camera
 
 # App Center
 npm install appcenter appcenter-analytics appcenter-crashes --save-exact
+    https://docs.microsoft.com/en-us/appcenter/sdk/getting-started/react-native
 
 # Code Push
 npm install react-native-code-push
+    https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started
 
 # General
 npm install @react-native-community/netinfo
