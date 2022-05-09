@@ -7,6 +7,7 @@ import {useNetInfo} from '@react-native-community/netinfo';
 import {useNavigation} from '@react-navigation/native';
 import codePush from 'react-native-code-push';
 import Crashes from 'appcenter-crashes';
+import notifee from '@notifee/react-native';
 
 const AccountScreen = () => {
   const [updateTitle, setUpdateTitle] = useState('Check for updates');
@@ -26,9 +27,26 @@ const AccountScreen = () => {
     await Crashes.generateTestCrash();
   };
 
+  const onDisplayNotification = async () => {
+    // Create a channel
+    const channelId = await notifee.createChannel({
+      id: 'default',
+      name: 'Default Channel',
+    });
+
+    // Display a notification
+    await notifee.displayNotification({
+      title: 'Notification Title',
+      body: 'Main body content of the notification',
+      android: {
+        channelId,
+      },
+    });
+  };
+
   const onButtonPress = () => {
     try {
-      codePush.sync(
+      void codePush.sync(
         {
           updateDialog: {
             title: 'Update available',
@@ -61,35 +79,18 @@ const AccountScreen = () => {
   };
 
   return (
-    <ScrollView
-      style={styles.container}
-      contentInsetAdjustmentBehavior="automatic">
+    <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
       <Text style={styles.text}>{isConnected ? 'Online' : 'Offline'}</Text>
-      <Button
-        style={styles.actionButton}
-        title="Camera"
-        onPress={() => navigate('CameraScreen')}
-      />
-      <Button
-        style={styles.actionButton}
-        title="Throw!"
-        onPress={throwJSExceptionHandler}
-      />
+      <Button style={styles.actionButton} title="Camera" onPress={() => navigate('CameraScreen')} />
+      <Button style={styles.actionButton} title="Throw!" onPress={throwJSExceptionHandler} />
       {/* <Button
         style={styles.actionButton}
         title="Crash!"
         onPress={generateCrashHandler}
       /> */}
-      <Button
-        style={styles.actionButton}
-        title="Reset Local Data"
-        onPress={resetDatabaseHandler}
-      />
-      <Button
-        style={styles.actionButton}
-        title={updateTitle}
-        onPress={onButtonPress}
-      />
+      <Button style={styles.actionButton} title="Reset Local Data" onPress={resetDatabaseHandler} />
+      <Button style={styles.actionButton} title={updateTitle} onPress={onButtonPress} />
+      <Button style={styles.actionButton} title="Notification" onPress={onDisplayNotification} />
     </ScrollView>
   );
 };

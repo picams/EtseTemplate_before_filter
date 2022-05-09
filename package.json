@@ -15,6 +15,7 @@
     "codepush": "appcenter codepush release-react -a edwin-etse.co.za/EtseTemplate -d Staging"
   },
   "dependencies": {
+    "@notifee/react-native": "^5.2.1",
     "@nozbe/watermelondb": "^0.24.0",
     "@react-native-community/netinfo": "^8.3.0",
     "@react-navigation/bottom-tabs": "^6.3.1",
