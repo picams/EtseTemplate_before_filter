@@ -20,9 +20,10 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', '@typescript-eslint'],
+  plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
-    indent: ['error', 4],
+    'prettier/prettier': 'error',
+    indent: ['error', 2],
     quotes: ['error', 'single'],
     'no-empty-function': 'off',
     '@typescript-eslint/no-empty-function': 'off',
