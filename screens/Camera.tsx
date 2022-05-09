@@ -29,20 +29,19 @@ const CameraScreen = () => {
   const isActive = isFocused && isForeground;
 
   useEffect(() => {
-    (async () => {
+    void (async () => {
       const status = await Camera.requestCameraPermission();
       setHasPermission(status === 'authorized');
     })();
   }, []);
 
   const takePicture = async () => {
-
     const photo = await camera.current?.takePhoto({
       skipMetadata: true,
       flash: 'off',
     });
 
-    (async (uri: string) => {
+    void (async (uri: string) => {
       const data = await RNFS.readFile(uri, 'base64');
 
       await database.write(async () => {
@@ -77,10 +76,7 @@ const CameraScreen = () => {
             onInitialized={onInitialized}
             photo={isActive}
           />
-          <TouchableOpacity
-            activeOpacity={0.5}
-            style={styles.buttonAlignment}
-            onPress={takePicture}>
+          <TouchableOpacity activeOpacity={0.5} style={styles.buttonAlignment} onPress={takePicture}>
             <Ionicons name="camera-outline" color="#fff" size={50} />
           </TouchableOpacity>
         </SafeAreaView>
