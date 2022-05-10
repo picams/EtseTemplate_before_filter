@@ -16,5 +16,5 @@ npm i
 cd ios
 pod deintegrate
 pod setup
-pod install
+pod install --repo-update
 cd ..

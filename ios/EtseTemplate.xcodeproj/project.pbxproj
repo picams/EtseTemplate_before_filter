@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* EtseTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* EtseTemplateTests.m */; };
-		093F89D2D7A7FBE97F43D74C /* libPods-EtseTemplate-EtseTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F434A4EAC864D3BD2EA020E2 /* libPods-EtseTemplate-EtseTemplateTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D81E2FB15428F900070B7CF7 /* libPods-EtseTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E149223DF77DA57D5E326C /* libPods-EtseTemplate.a */; };
+		9022C75B1BD1034DD17D03AA /* libPods-EtseTemplate-EtseTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A67D7AE2498F8FBCDA0FC334 /* libPods-EtseTemplate-EtseTemplateTests.a */; };
+		D94C6CED8A31CA1FD21890CF /* libPods-EtseTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DF6196607304393B9B60F5F4 /* libPods-EtseTemplate.a */; };
 		E88358392827CFD90030F3A6 /* wmelon.swift in Sources */ = {isa = PBXBuildFile; fileRef = E88358382827CFD90030F3A6 /* wmelon.swift */; };
 		E883583B28283CC50030F3A6 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = E883583A28283CC50030F3A6 /* AppCenter-Config.plist */; };
 /* End PBXBuildFile section */
@@ -38,17 +38,17 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = EtseTemplate/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = EtseTemplate/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = EtseTemplate/main.m; sourceTree = "<group>"; };
-		3294591433299CCE4398DC2D /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig"; path = "Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
-		40209656FEA4CA50C16DCC7B /* Pods-EtseTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate.release.xcconfig"; path = "Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		217A065DE6595F2F666FB063 /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig"; path = "Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6847468DEAC5FB5CD17AE4F6 /* Pods-EtseTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = EtseTemplate/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		97E149223DF77DA57D5E326C /* libPods-EtseTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		8A4C7A1C9CBCBE08080E1325 /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; path = "Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests.release.xcconfig"; sourceTree = "<group>"; };
+		A67D7AE2498F8FBCDA0FC334 /* libPods-EtseTemplate-EtseTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate-EtseTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBC855698DC930A03F898E30 /* Pods-EtseTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate.release.xcconfig"; path = "Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		DF6196607304393B9B60F5F4 /* libPods-EtseTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E88358372827CFD80030F3A6 /* EtseTemplate-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EtseTemplate-Bridging-Header.h"; sourceTree = "<group>"; };
 		E88358382827CFD90030F3A6 /* wmelon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = wmelon.swift; sourceTree = "<group>"; };
 		E883583A28283CC50030F3A6 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		EFE819B69963E7406E2CB4E8 /* Pods-EtseTemplate.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EtseTemplate.debug.xcconfig"; path = "Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate.debug.xcconfig"; sourceTree = "<group>"; };
-		F434A4EAC864D3BD2EA020E2 /* libPods-EtseTemplate-EtseTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EtseTemplate-EtseTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				093F89D2D7A7FBE97F43D74C /* libPods-EtseTemplate-EtseTemplateTests.a in Frameworks */,
+				9022C75B1BD1034DD17D03AA /* libPods-EtseTemplate-EtseTemplateTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D81E2FB15428F900070B7CF7 /* libPods-EtseTemplate.a in Frameworks */,
+				D94C6CED8A31CA1FD21890CF /* libPods-EtseTemplate.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				97E149223DF77DA57D5E326C /* libPods-EtseTemplate.a */,
-				F434A4EAC864D3BD2EA020E2 /* libPods-EtseTemplate-EtseTemplateTests.a */,
+				DF6196607304393B9B60F5F4 /* libPods-EtseTemplate.a */,
+				A67D7AE2498F8FBCDA0FC334 /* libPods-EtseTemplate-EtseTemplateTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,10 +148,10 @@
 		A73ED4C2582F58953958A322 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EFE819B69963E7406E2CB4E8 /* Pods-EtseTemplate.debug.xcconfig */,
-				40209656FEA4CA50C16DCC7B /* Pods-EtseTemplate.release.xcconfig */,
-				3294591433299CCE4398DC2D /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */,
-				CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */,
+				6847468DEAC5FB5CD17AE4F6 /* Pods-EtseTemplate.debug.xcconfig */,
+				CBC855698DC930A03F898E30 /* Pods-EtseTemplate.release.xcconfig */,
+				217A065DE6595F2F666FB063 /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */,
+				8A4C7A1C9CBCBE08080E1325 /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -163,12 +163,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "EtseTemplateTests" */;
 			buildPhases = (
-				0E5BEE37C51894CDE0E1F67A /* [CP] Check Pods Manifest.lock */,
+				0E9CDE96375E8E48DF857E76 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				19BADF01AFF86D2D7110E252 /* [CP] Embed Pods Frameworks */,
-				6414BA0B368ECC4BF2269BC1 /* [CP] Copy Pods Resources */,
+				48CEBFB6191AD229B0FBCAC1 /* [CP] Embed Pods Frameworks */,
+				E627FA689C1758148B3367BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,14 +184,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "EtseTemplate" */;
 			buildPhases = (
-				9D95515B2813FB3287DB5C42 /* [CP] Check Pods Manifest.lock */,
+				5EB69B2618588D0D7936D887 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				6FAAC0BD3462648C6F0D977D /* [CP] Embed Pods Frameworks */,
-				F2DD430DAE05AD6ED5E1B658 /* [CP] Copy Pods Resources */,
+				3F6409C791A083E51E47A6AB /* [CP] Embed Pods Frameworks */,
+				DD831149D55F78526EB85AFE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -273,7 +273,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		0E5BEE37C51894CDE0E1F67A /* [CP] Check Pods Manifest.lock */ = {
+		0E9CDE96375E8E48DF857E76 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -295,41 +295,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		19BADF01AFF86D2D7110E252 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6414BA0B368ECC4BF2269BC1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6FAAC0BD3462648C6F0D977D /* [CP] Embed Pods Frameworks */ = {
+		3F6409C791A083E51E47A6AB /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -346,7 +312,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9D95515B2813FB3287DB5C42 /* [CP] Check Pods Manifest.lock */ = {
+		48CEBFB6191AD229B0FBCAC1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EB69B2618588D0D7936D887 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -368,7 +351,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F2DD430DAE05AD6ED5E1B658 /* [CP] Copy Pods Resources */ = {
+		DD831149D55F78526EB85AFE /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -383,6 +366,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate/Pods-EtseTemplate-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E627FA689C1758148B3367BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EtseTemplate-EtseTemplateTests/Pods-EtseTemplate-EtseTemplateTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -438,7 +438,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3294591433299CCE4398DC2D /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */;
+			baseConfigurationReference = 217A065DE6595F2F666FB063 /* Pods-EtseTemplate-EtseTemplateTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -466,7 +466,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CE11DEBFB31644A99FDFE49C /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */;
+			baseConfigurationReference = 8A4C7A1C9CBCBE08080E1325 /* Pods-EtseTemplate-EtseTemplateTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -491,11 +491,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EFE819B69963E7406E2CB4E8 /* Pods-EtseTemplate.debug.xcconfig */;
+			baseConfigurationReference = 6847468DEAC5FB5CD17AE4F6 /* Pods-EtseTemplate.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2YYP9XL3RD;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = EtseTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -518,11 +519,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 40209656FEA4CA50C16DCC7B /* Pods-EtseTemplate.release.xcconfig */;
+			baseConfigurationReference = CBC855698DC930A03F898E30 /* Pods-EtseTemplate.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2YYP9XL3RD;
 				INFOPLIST_FILE = EtseTemplate/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

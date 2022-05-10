@@ -327,6 +327,10 @@ PODS:
     - glog
   - react-native-maps (0.31.1):
     - React-Core
+  - react-native-multithreading (1.1.1):
+    - React
+    - React-callinvoker
+    - React-Core
   - react-native-netinfo (8.3.0):
     - React-Core
   - react-native-restart (0.0.24):
@@ -518,6 +522,7 @@ DEPENDENCIES:
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-maps (from `../node_modules/react-native-maps`)
+  - react-native-multithreading (from `../node_modules/react-native-multithreading`)
   - "react-native-netinfo (from `../node_modules/@react-native-community/netinfo`)"
   - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
@@ -619,6 +624,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/logger"
   react-native-maps:
     :path: "../node_modules/react-native-maps"
+  react-native-multithreading:
+    :path: "../node_modules/react-native-multithreading"
   react-native-netinfo:
     :path: "../node_modules/@react-native-community/netinfo"
   react-native-restart:
@@ -717,6 +724,7 @@ SPEC CHECKSUMS:
   React-jsinspector: f4775ea9118cbe1f72b834f0f842baa7a99508d8
   React-logger: a1f028f6d8639a3f364ef80419e5e862e1115250
   react-native-maps: 8b8bfada2c86205a7f5a07dd1f92f29b33ea83aa
+  react-native-multithreading: 5e18f82a1e034a3b8ede96ff471e1ec0c97eb2b7
   react-native-netinfo: 3671b091c4843fda5e153612866ef4024b8f5d62
   react-native-restart: 45c8dca02491980f2958595333cbccd6877cb57e
   react-native-safe-area-context: ebf8c413eb8b5f7c392a036a315eb7b46b96845f
