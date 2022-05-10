@@ -1,17 +1,17 @@
-import {Database} from '@nozbe/watermelondb';
+import { Database } from '@nozbe/watermelondb';
 import SQLiteAdapter from '@nozbe/watermelondb/adapters/sqlite';
 import schema from './schema';
 // import migrations from './migrations';
-import {Photo} from './models';
-import {Alert} from 'react-native';
+import { Coordinate, Photo, Track } from './models';
+import { Alert } from 'react-native';
 
 // First, create the adapter to the underlying database:
 const adapter = new SQLiteAdapter({
   schema,
   // migrations,
   dbName: 'etsetemplate',
-  jsi: true,
-  onSetUpError: error => {
+  jsi: false,
+  onSetUpError: (error) => {
     console.log(error);
     Alert.alert('error in database setup');
   },
@@ -20,7 +20,7 @@ const adapter = new SQLiteAdapter({
 // Then, make a Watermelon database from it!
 const database = new Database({
   adapter,
-  modelClasses: [Photo],
+  modelClasses: [Photo, Track, Coordinate],
 });
 
 const resetDatabase = async () => {
@@ -42,4 +42,4 @@ const localAsyncStorage = {
   },
 };
 
-export {database, resetDatabase, localAsyncStorage};
+export { database, resetDatabase, localAsyncStorage };
