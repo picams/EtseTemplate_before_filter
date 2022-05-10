@@ -1,11 +1,11 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {createDrawerNavigator} from '@react-navigation/drawer';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import CodePushVerification from './appcenter/CodePush';
 import DatabaseProvider from '@nozbe/watermelondb/DatabaseProvider';
-import {database} from './db/database';
+import { database } from './db/database';
 import Map from './screens/Map';
 import Camera from './screens/Camera';
 import Gallery from './screens/Gallery';
@@ -14,7 +14,7 @@ import Home from './screens/Home';
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="HomeScreen" component={Home} />
       <Stack.Screen name="MapScreen" component={Map} />
       <Stack.Screen name="CameraScreen" component={Camera} />
@@ -32,13 +32,7 @@ const DrawerNavigator = () => {
         component={StackNavigator}
         options={{
           title: 'Home',
-          drawerIcon: ({focused, size}) => (
-            <Ionicons
-              name="md-home"
-              size={size}
-              color={focused ? '#7cc' : '#ccc'}
-            />
-          ),
+          drawerIcon: ({ focused, size }) => <Ionicons name="md-home" size={size} color={focused ? '#7cc' : '#ccc'} />,
         }}
       />
       <Drawer.Screen
@@ -46,13 +40,7 @@ const DrawerNavigator = () => {
         component={Map}
         options={{
           title: 'Map',
-          drawerIcon: ({focused, size}) => (
-            <Ionicons
-              name="md-home"
-              size={size}
-              color={focused ? '#7cc' : '#ccc'}
-            />
-          ),
+          drawerIcon: ({ focused, size }) => <Ionicons name="md-home" size={size} color={focused ? '#7cc' : '#ccc'} />,
         }}
       />
       <Drawer.Screen
@@ -60,13 +48,7 @@ const DrawerNavigator = () => {
         component={Gallery}
         options={{
           title: 'Gallery',
-          drawerIcon: ({focused, size}) => (
-            <Ionicons
-              name="md-home"
-              size={size}
-              color={focused ? '#7cc' : '#ccc'}
-            />
-          ),
+          drawerIcon: ({ focused, size }) => <Ionicons name="md-home" size={size} color={focused ? '#7cc' : '#ccc'} />,
         }}
       />
     </Drawer.Navigator>

@@ -17,7 +17,7 @@ void Crashes.setListener({
         onPress: () => Crashes.notifyUserConfirmation(UserConfirmation.SEND),
       },
       { text: 'Yes, always send them', onPress: () => Crashes.notifyUserConfirmation(UserConfirmation.ALWAYS_SEND) },
-      { text: 'Don\'t send at this time', onPress: () => Crashes.notifyUserConfirmation(UserConfirmation.DONT_SEND) },
+      { text: "Don't send at this time", onPress: () => Crashes.notifyUserConfirmation(UserConfirmation.DONT_SEND) },
     ]);
     return true;
   },

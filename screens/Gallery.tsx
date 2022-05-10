@@ -1,34 +1,24 @@
-import React, {memo, useCallback, useState} from 'react';
-import {
-  FlatList,
-  View,
-  LayoutChangeEvent,
-  StyleSheet,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
+import React, { memo, useCallback, useState } from 'react';
+import { FlatList, View, LayoutChangeEvent, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import FastImage from 'react-native-fast-image';
-import {Database, Q} from '@nozbe/watermelondb';
-import {withDatabase} from '@nozbe/watermelondb/DatabaseProvider';
+import { Database, Q } from '@nozbe/watermelondb';
+import { withDatabase } from '@nozbe/watermelondb/DatabaseProvider';
 import withObservables from '@nozbe/with-observables';
-import {Photo} from '../db/models';
+import { Photo } from '../db/models';
 
 const COLUMNS = 2;
 const MARGIN = 1;
 
-const GridItem = memo(({photo}: {photo: Photo}) => {
+const GridItem = memo(({ photo }: { photo: Photo }) => {
   const uri = `data:image/jpeg;base64,${photo.photo}`;
   return (
-    <TouchableOpacity
-      activeOpacity={0.75}
-      style={styles.imageContainer}
-      onPress={() => Alert.alert('onPress')}>
-      <FastImage source={{uri}} style={styles.image} />
+    <TouchableOpacity activeOpacity={0.75} style={styles.imageContainer} onPress={() => Alert.alert('onPress')}>
+      <FastImage source={{ uri }} style={styles.image} />
     </TouchableOpacity>
   );
 });
 
-const Grid = ({photos}: {photos: Photo[]}) => {
+const Grid = ({ photos }: { photos: Photo[] }) => {
   const [itemHeight, setItemHeight] = useState(0);
 
   const onLayout = useCallback((e: LayoutChangeEvent) => {
@@ -38,12 +28,12 @@ const Grid = ({photos}: {photos: Photo[]}) => {
 
   const getItemLayout = useCallback(
     (_: any, index: number) => {
-      return {length: itemHeight, offset: itemHeight * index, index};
+      return { length: itemHeight, offset: itemHeight * index, index };
     },
     [itemHeight],
   );
 
-  const renderItem = useCallback(({item}: {item: Photo}) => {
+  const renderItem = useCallback(({ item }: { item: Photo }) => {
     return <GridItem photo={item} />;
   }, []);
 
@@ -56,7 +46,7 @@ const Grid = ({photos}: {photos: Photo[]}) => {
       <FlatList
         onLayout={onLayout}
         style={styles.list}
-        columnWrapperStyle={[styles.columnWrapper, {height: itemHeight}]}
+        columnWrapperStyle={[styles.columnWrapper, { height: itemHeight }]}
         data={photos}
         renderItem={renderItem}
         numColumns={COLUMNS}
@@ -67,7 +57,7 @@ const Grid = ({photos}: {photos: Photo[]}) => {
   );
 };
 
-const enhance = withObservables([], ({database}: {database: Database}) => {
+const enhance = withObservables([], ({ database }: { database: Database }) => {
   return {
     photos: database.get<Photo>('photos').query(Q.sortBy('created_at', 'desc')),
   };

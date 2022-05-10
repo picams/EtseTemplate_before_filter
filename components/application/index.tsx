@@ -1,2 +1,2 @@
-export {ApplicationButton} from './applicationButton/ApplicationButton';
-export {ApplicationLabel} from './applicationLabel/ApplicationLabel';
+export { ApplicationButton } from './applicationButton/ApplicationButton';
+export { ApplicationLabel } from './applicationLabel/ApplicationLabel';

@@ -1,7 +1,7 @@
-import React, {FC, useMemo} from 'react';
-import {View, TouchableOpacity} from 'react-native';
-import {useStyles} from './styles';
-import type {ApplicationButtonProps} from './types';
+import React, { FC, useMemo } from 'react';
+import { View, TouchableOpacity } from 'react-native';
+import { useStyles } from './styles';
+import type { ApplicationButtonProps } from './types';
 
 export const ApplicationButton: FC<ApplicationButtonProps> = ({
   containerStyle: _providedContainerStyle,
@@ -22,10 +22,7 @@ export const ApplicationButton: FC<ApplicationButtonProps> = ({
   );
   //#endregion
   return (
-    <TouchableOpacity
-      style={containerStyle}
-      onPress={onPress}
-      disabled={disabled}>
+    <TouchableOpacity style={containerStyle} onPress={onPress} disabled={disabled}>
       <View style={contentContainerStyle}>{children}</View>
     </TouchableOpacity>
   );

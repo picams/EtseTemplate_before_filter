@@ -1,1 +1,1 @@
-export {ApplicationLabel} from './ApplicationLabel';
+export { ApplicationLabel } from './ApplicationLabel';

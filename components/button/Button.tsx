@@ -1,6 +1,6 @@
 import React from 'react';
-import {ViewStyle, TextStyle} from 'react-native';
-import {ApplicationButton, ApplicationLabel} from '../application';
+import { ViewStyle, TextStyle } from 'react-native';
+import { ApplicationButton, ApplicationLabel } from '../application';
 
 interface ButtonProps {
   title: string;
@@ -11,14 +11,7 @@ interface ButtonProps {
   onPress: () => void;
 }
 
-const Button = ({
-  title,
-  disabled,
-  labelStyle,
-  style,
-  contentContainerStyle,
-  onPress,
-}: ButtonProps) => {
+const Button = ({ title, disabled, labelStyle, style, contentContainerStyle, onPress }: ButtonProps) => {
   // render
   return (
     <ApplicationButton

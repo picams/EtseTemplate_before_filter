@@ -1,18 +1,19 @@
-import React, {useState} from 'react';
-import {StyleSheet, ScrollView, Text, Alert} from 'react-native';
-import {resetDatabase} from '../db/database';
+import React, { useState } from 'react';
+import { StyleSheet, ScrollView, Text, Alert } from 'react-native';
+import { resetDatabase } from '../db/database';
 import RNRestart from 'react-native-restart';
 import Button from '../components/button';
-import {useNetInfo} from '@react-native-community/netinfo';
-import {useNavigation} from '@react-navigation/native';
+import { useNetInfo } from '@react-native-community/netinfo';
+import { useNavigation } from '@react-navigation/native';
 import codePush from 'react-native-code-push';
 import Crashes from 'appcenter-crashes';
 import notifee from '@notifee/react-native';
+import { readT1 } from '../data/parse';
 
 const AccountScreen = () => {
   const [updateTitle, setUpdateTitle] = useState('Check for updates');
-  const {navigate} = useNavigation();
-  const {isConnected} = useNetInfo();
+  const { navigate } = useNavigation();
+  const { isConnected } = useNetInfo();
 
   const resetDatabaseHandler = async () => {
     await resetDatabase();
@@ -35,13 +36,15 @@ const AccountScreen = () => {
     });
 
     // Display a notification
-    await notifee.displayNotification({
+    const awaited = await notifee.displayNotification({
       title: 'Notification Title',
       body: 'Main body content of the notification',
       android: {
         channelId,
       },
     });
+
+    console.log('displayNotification', awaited);
   };
 
   const onButtonPress = () => {
@@ -53,7 +56,7 @@ const AccountScreen = () => {
           },
           installMode: codePush.InstallMode.IMMEDIATE,
         }, // options
-        status => {
+        (status) => {
           console.log('codePush.SyncStatus', status);
 
           if (status === codePush.SyncStatus.UP_TO_DATE) {
@@ -65,7 +68,7 @@ const AccountScreen = () => {
             setUpdateTitle('Check for updates');
           }
         }, // syncStatusChangedCallback
-        ({receivedBytes, totalBytes}) => {
+        ({ receivedBytes, totalBytes }) => {
           const percent = `${Math.ceil(receivedBytes / totalBytes) * 100}`;
           setUpdateTitle(`Downloading update ${percent}%`);
         }, // downloadProgressCallback
@@ -78,6 +81,26 @@ const AccountScreen = () => {
     }
   };
 
+  const onReadT1 = () => {
+    void (async () => await readT1())();
+  };
+
+  // const fibonacci = (num: number): number => {
+  //   'worklet';
+  //   if (num <= 1) return 1;
+  //   return fibonacci(num - 1) + fibonacci(num - 2);
+  // };
+
+  // const input = 50;
+  // const result = await spawnThread(() => {
+  //   'worklet';
+  //   console.log(`calculating fibonacci for input: ${input} in JS-Runtime: ${global._LABEL}...`);
+  //   const fib = fibonacci(input);
+  //   console.log('finished calculating fibonacci!');
+  //   return fib;
+  // });
+  // console.log(`Fibonacci Result: ${result}`);
+
   return (
     <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
       <Text style={styles.text}>{isConnected ? 'Online' : 'Offline'}</Text>
@@ -88,9 +111,10 @@ const AccountScreen = () => {
         title="Crash!"
         onPress={generateCrashHandler}
       /> */}
-      <Button style={styles.actionButton} title="Reset Local Data" onPress={resetDatabaseHandler} />
+      <Button style={styles.actionButton} title="Reset Local Database" onPress={resetDatabaseHandler} />
       <Button style={styles.actionButton} title={updateTitle} onPress={onButtonPress} />
       <Button style={styles.actionButton} title="Notification" onPress={onDisplayNotification} />
+      <Button style={styles.actionButton} title="Track 1" onPress={() => onReadT1()} />
     </ScrollView>
   );
 };

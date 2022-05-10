@@ -1,14 +1,14 @@
 import 'react-native-gesture-handler';
 
-import {AppRegistry, Alert} from 'react-native';
+import { AppRegistry, Alert } from 'react-native';
 import App from './App';
-import {name as appName} from './app.json';
+import { name as appName } from './app.json';
 
-import {gestureHandlerRootHOC} from 'react-native-gesture-handler';
-import {enableFreeze} from 'react-native-screens';
-import {enableLatestRenderer} from 'react-native-maps';
+import { gestureHandlerRootHOC } from 'react-native-gesture-handler';
+import { enableFreeze } from 'react-native-screens';
+import { enableLatestRenderer } from 'react-native-maps';
 
-import {setJSExceptionHandler, setNativeExceptionHandler} from 'react-native-exception-handler';
+import { setJSExceptionHandler, setNativeExceptionHandler } from 'react-native-exception-handler';
 
 const errorHandler = (e, isFatal) => {
   if (isFatal) {
@@ -24,7 +24,7 @@ const errorHandler = (e, isFatal) => {
 
 setJSExceptionHandler(errorHandler, true);
 
-setNativeExceptionHandler(errorString => {
+setNativeExceptionHandler((errorString) => {
   console.log('setNativeExceptionHandler', errorString);
 });
 

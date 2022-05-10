@@ -1,5 +1,5 @@
-import {Dimensions, Platform} from 'react-native';
-import {initialWindowMetrics} from 'react-native-safe-area-context';
+import { Dimensions, Platform } from 'react-native';
+import { initialWindowMetrics } from 'react-native-safe-area-context';
 
 export const CONTENT_SPACING = 15;
 
@@ -20,7 +20,6 @@ export const MAX_ZOOM_FACTOR = 20;
 
 export const SCREEN_WIDTH = Dimensions.get('window').width;
 export const SCREEN_HEIGHT = Platform.select<number>({
-  android:
-    Dimensions.get('screen').height - initialWindowMetrics!.insets.bottom,
+  android: Dimensions.get('screen').height - initialWindowMetrics!.insets.bottom,
   ios: Dimensions.get('window').height,
 }) as number;

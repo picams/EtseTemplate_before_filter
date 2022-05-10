@@ -1,23 +1,23 @@
-import {useIsFocused} from '@react-navigation/native';
+import { useIsFocused } from '@react-navigation/native';
 import * as React from 'react';
-import {useCallback, useEffect, useRef} from 'react';
-import {Alert, SafeAreaView, StyleSheet} from 'react-native';
-import {CameraRuntimeError, useCameraDevices} from 'react-native-vision-camera';
-import {Camera} from 'react-native-vision-camera';
-import {useIsForeground} from '../hooks/useIsForeground';
-import {TouchableOpacity} from 'react-native-gesture-handler';
+import { useCallback, useEffect, useRef } from 'react';
+import { Alert, SafeAreaView, StyleSheet } from 'react-native';
+import { CameraRuntimeError, useCameraDevices } from 'react-native-vision-camera';
+import { Camera } from 'react-native-vision-camera';
+import { useIsForeground } from '../hooks/useIsForeground';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import {SCREEN_HEIGHT} from '../Constants';
+import { SCREEN_HEIGHT } from '../Constants';
 import RNFS from 'react-native-fs';
-import {database} from '../db/database';
-import {Photo} from '../db/models';
-import {useNavigation} from '@react-navigation/native';
+import { database } from '../db/database';
+import { Photo } from '../db/models';
+import { useNavigation } from '@react-navigation/native';
 import Analytics from 'appcenter-analytics';
 
 const BUTTON_SIZE = 80;
 
 const CameraScreen = () => {
-  const {navigate, goBack} = useNavigation();
+  const { navigate, goBack } = useNavigation();
   const [isCameraInitialized, setIsCameraInitialized] = React.useState(false);
   const [hasPermission, setHasPermission] = React.useState(false);
   const devices = useCameraDevices();
@@ -45,7 +45,7 @@ const CameraScreen = () => {
       const data = await RNFS.readFile(uri, 'base64');
 
       await database.write(async () => {
-        await database.get<Photo>('photos').create(item => {
+        await database.get<Photo>('photos').create((item) => {
           item.photo = data;
         });
       });

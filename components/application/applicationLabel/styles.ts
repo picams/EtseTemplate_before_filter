@@ -1,9 +1,9 @@
-import {useMemo} from 'react';
-import {StyleSheet} from 'react-native';
-import {useApplicationTheme} from '../../../hooks/useApplicationTheme';
+import { useMemo } from 'react';
+import { StyleSheet } from 'react-native';
+import { useApplicationTheme } from '../../../hooks/useApplicationTheme';
 
 export const useStyles = () => {
-  const {colors} = useApplicationTheme();
+  const { colors } = useApplicationTheme();
   return useMemo(
     () =>
       StyleSheet.create({
