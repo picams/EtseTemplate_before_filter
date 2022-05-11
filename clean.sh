@@ -11,7 +11,7 @@ rm -rf android/.cxx android/.gradle
 rm -rf android/app/build
 
 echo "Installing..."
-npm i
+npm i --force
 
 cd ios
 pod deintegrate

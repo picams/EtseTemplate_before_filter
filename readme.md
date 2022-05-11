@@ -78,12 +78,26 @@ https://docs.microsoft.com/en-us/appcenter/distribution/codepush/rn-get-started
 npm install @notifee/react-native  
 https://notifee.app/react-native/docs/installation  
 
+# Signature Pad
+
+# Pdf
+
+npm install react-native-pdf react-native-blob-util --save
+
+# HMS
+
+https://forums.developer.huawei.com/forumPortal/en/topic/0201200045194610058
+
+
+
 # General
 
 npm install @react-native-community/netinfo  
 npm install react-native-fs  
 npm install react-native-fast-image  
 npm install react-native-restart  
+npm install react-native-multithreading
+npm i patch-package --save-dev
 
 # ios after every npm install
 
