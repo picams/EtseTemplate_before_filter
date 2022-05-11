@@ -6,10 +6,10 @@ import HMSMap, { MapTypes, Gravity } from '@hmscore/react-native-hms-map';
 
 import { styles } from '../styles/styles';
 
-const HMS = () => (
+const HuaweiMap = () => (
   <HMSMap
     style={styles.fullHeight}
-    mapType={MapTypes.NORMAL}
+    mapType={MapTypes.TERRAIN}
     camera={{
       target: {
         latitude: -33.9321,
@@ -22,9 +22,10 @@ const HMS = () => (
   />
 );
 
-const GMS = () => (
+const OtherMap = () => (
   <MapView
     style={styles.fullHeight}
+    mapType={'hybrid'}
     region={{
       latitude: -33.9321,
       longitude: 18.8602,
@@ -36,7 +37,7 @@ const GMS = () => (
 
 const Map = () => {
   const { mobileService } = useAppContext();
-  return <SafeAreaView>{mobileService === 'hms' ? <HMS /> : <GMS />}</SafeAreaView>;
+  return <SafeAreaView>{mobileService === 'huawei' ? <HuaweiMap /> : <OtherMap />}</SafeAreaView>;
 };
 
 export default Map;

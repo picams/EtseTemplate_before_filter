@@ -1,17 +1,25 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { NativeModules, Platform } from 'react-native';
 
 const AppContext = createContext({
   mobileService: '',
 });
 
 const AppProvider = ({ children }) => {
-  const [mobileService, setMobileService] = useState('');
+  const [mobileService, setMobileService] = useState('none');
 
   useEffect(() => {
-    setMobileService('hms');
+    if (Platform.OS === 'ios') {
+      setMobileService('ios');
+    } else if (Platform.OS === 'android') {
+      NativeModules.RNMobileServiceDetectBase.getService().then((mobile: { service }) => {
+        setMobileService(mobile.service);
+      });
+    }
   }, []);
 
   const context = { mobileService };
