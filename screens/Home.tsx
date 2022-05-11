@@ -9,11 +9,13 @@ import codePush from 'react-native-code-push';
 import Crashes from 'appcenter-crashes';
 import notifee from '@notifee/react-native';
 import { readT1 } from '../data/parse';
+import { useAppContext } from '../contexts/AppContext';
 
 const AccountScreen = () => {
   const [updateTitle, setUpdateTitle] = useState('Check for updates');
   const { navigate } = useNavigation();
   const { isConnected } = useNetInfo();
+  const { mobileService } = useAppContext();
 
   const resetDatabaseHandler = async () => {
     await resetDatabase();
@@ -85,25 +87,10 @@ const AccountScreen = () => {
     void (async () => await readT1())();
   };
 
-  // const fibonacci = (num: number): number => {
-  //   'worklet';
-  //   if (num <= 1) return 1;
-  //   return fibonacci(num - 1) + fibonacci(num - 2);
-  // };
-
-  // const input = 50;
-  // const result = await spawnThread(() => {
-  //   'worklet';
-  //   console.log(`calculating fibonacci for input: ${input} in JS-Runtime: ${global._LABEL}...`);
-  //   const fib = fibonacci(input);
-  //   console.log('finished calculating fibonacci!');
-  //   return fib;
-  // });
-  // console.log(`Fibonacci Result: ${result}`);
-
   return (
     <ScrollView style={styles.container} contentInsetAdjustmentBehavior="automatic">
-      <Text style={styles.text}>{isConnected ? 'Online' : 'Offline'}</Text>
+      <Text style={styles.text}>Mobile Service: {mobileService}</Text>
+      <Text style={styles.text}>Network Connection: {isConnected ? 'Online' : 'Offline'}</Text>
       <Button style={styles.actionButton} title="Camera" onPress={() => navigate('CameraScreen')} />
       <Button style={styles.actionButton} title="Throw!" onPress={throwJSExceptionHandler} />
       {/* <Button

@@ -1,4 +1,4 @@
-package com.etsetemplate;
+package com.etsetemplate.huawei;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle;

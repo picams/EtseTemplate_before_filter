@@ -16,6 +16,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@hmscore/react-native-hms-map": "^6.3.1-304",
     "@notifee/react-native": "^5.2.1",
     "@nozbe/watermelondb": "^0.24.0",
     "@react-native-community/netinfo": "^8.3.0",

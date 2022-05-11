@@ -1,30 +1,42 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { SafeAreaView, StyleSheet, View } from 'react-native';
 import MapView from 'react-native-maps';
+import { useAppContext } from '../contexts/AppContext';
+import HMSMap, { MapTypes, Gravity } from '@hmscore/react-native-hms-map';
 
-const styles = StyleSheet.create({
-  container: {
-    ...StyleSheet.absoluteFillObject,
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-  },
-  map: {
-    ...StyleSheet.absoluteFillObject,
-  },
-});
+import { styles } from '../styles/styles';
 
-const Map = () => (
-  <View style={styles.container}>
-    <MapView
-      style={styles.map}
-      region={{
-        latitude: 37.78825,
-        longitude: -122.4324,
-        latitudeDelta: 0.015,
-        longitudeDelta: 0.0121,
-      }}
-    />
-  </View>
+const HMS = () => (
+  <HMSMap
+    style={styles.fullHeight}
+    mapType={MapTypes.NORMAL}
+    camera={{
+      target: {
+        latitude: -33.9321,
+        longitude: 18.8602,
+      },
+      zoom: 12,
+    }}
+    logoPosition={Gravity.BOTTOM | Gravity.START}
+    logoPadding={{ paddingStart: 0, paddingTop: 0, paddingBottom: 0, paddingEnd: 0 }}
+  />
 );
+
+const GMS = () => (
+  <MapView
+    style={styles.fullHeight}
+    region={{
+      latitude: -33.9321,
+      longitude: 18.8602,
+      latitudeDelta: 0.015,
+      longitudeDelta: 0.0121,
+    }}
+  />
+);
+
+const Map = () => {
+  const { mobileService } = useAppContext();
+  return <SafeAreaView>{mobileService === 'hms' ? <HMS /> : <GMS />}</SafeAreaView>;
+};
 
 export default Map;

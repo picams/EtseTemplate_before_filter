@@ -10,6 +10,7 @@ import Map from './screens/Map';
 import Camera from './screens/Camera';
 import Gallery from './screens/Gallery';
 import Home from './screens/Home';
+import { AppProvider } from './contexts/AppContext';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
@@ -57,14 +58,14 @@ const DrawerNavigator = () => {
 
 const App = () => {
   return (
-    <>
+    <AppProvider>
       <CodePushVerification />
       <DatabaseProvider database={database}>
         <NavigationContainer>
           <DrawerNavigator />
         </NavigationContainer>
       </DatabaseProvider>
-    </>
+    </AppProvider>
   );
 };
 
