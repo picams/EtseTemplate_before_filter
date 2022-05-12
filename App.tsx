@@ -11,6 +11,7 @@ import Camera from './screens/Camera';
 import Gallery from './screens/Gallery';
 import Home from './screens/Home';
 import { AppProvider } from './contexts/AppContext';
+import Tracks from './screens/Tracks';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => {
@@ -41,6 +42,14 @@ const DrawerNavigator = () => {
         component={Map}
         options={{
           title: 'Map',
+          drawerIcon: ({ focused, size }) => <Ionicons name="md-home" size={size} color={focused ? '#7cc' : '#ccc'} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Tracks"
+        component={Tracks}
+        options={{
+          title: 'Tracks',
           drawerIcon: ({ focused, size }) => <Ionicons name="md-home" size={size} color={focused ? '#7cc' : '#ccc'} />,
         }}
       />

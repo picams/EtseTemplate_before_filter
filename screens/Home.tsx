@@ -8,11 +8,13 @@ import { useNavigation } from '@react-navigation/native';
 import codePush from 'react-native-code-push';
 import Crashes from 'appcenter-crashes';
 import notifee from '@notifee/react-native';
-import { readT1 } from '../data/parse';
+import { readTracks, readTracksBatch } from '../data/parse';
 import { useAppContext } from '../contexts/AppContext';
+import RowCounts from './RowCounts';
 
 const AccountScreen = () => {
   const [updateTitle, setUpdateTitle] = useState('Check for updates');
+  const [busyLoadingTracks, setBusyLoadingTracks] = useState(false);
   const { navigate } = useNavigation();
   const { isConnected } = useNetInfo();
   const { mobileService } = useAppContext();
@@ -83,8 +85,20 @@ const AccountScreen = () => {
     }
   };
 
-  const onReadT1 = () => {
-    void (async () => await readT1())();
+  const onReadTracks = () => {
+    setBusyLoadingTracks(true);
+    void (async () => {
+      await readTracks();
+      setBusyLoadingTracks(false);
+    })();
+  };
+
+  const onReadTracksBatch = () => {
+    setBusyLoadingTracks(true);
+    void (async () => {
+      await readTracksBatch();
+      setBusyLoadingTracks(false);
+    })();
   };
 
   return (
@@ -101,7 +115,19 @@ const AccountScreen = () => {
       <Button style={styles.actionButton} title="Reset Local Database" onPress={resetDatabaseHandler} />
       <Button style={styles.actionButton} title={updateTitle} onPress={onButtonPress} />
       <Button style={styles.actionButton} title="Notification" onPress={onDisplayNotification} />
-      <Button style={styles.actionButton} title="Track 1" onPress={() => onReadT1()} />
+      <Button
+        style={styles.actionButton}
+        disabled={busyLoadingTracks}
+        title="Tracks to Db ( One By One )"
+        onPress={() => onReadTracks()}
+      />
+      <Button
+        style={styles.actionButton}
+        disabled={busyLoadingTracks}
+        title="Tracks to Db ( In Batches )"
+        onPress={() => onReadTracksBatch()}
+      />
+      <RowCounts />
     </ScrollView>
   );
 };

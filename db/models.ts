@@ -22,8 +22,8 @@ export class Track extends Model {
     coordinates: { type: 'has_many', foreignKey: 'track_id' },
   };
   @field('tracker') tracker!: number;
-  @field('start_time') startTime!: number;
-  @field('end_time') endTime!: number;
+  @date('start_time') startTime!: Date;
+  @date('end_time') endTime!: Date;
   @field('points') points!: number;
 
   @children('coordinates') coordinates?: Query<Coordinate>;
